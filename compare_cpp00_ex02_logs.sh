@@ -1,9 +1,10 @@
 #!/bin/bash
+make -s
 echo "Comparing two logs: one from running the account and one from the subject."
 
-make
+executable_name="account"
 
-account_log=$(./account | cut -d' ' -f2-)
+account_log=$(./${executable_name} | cut -d' ' -f2-)
 subject_log=$(cat 19920104_091532.log | cut -d' ' -f2-)
 
 diff <(echo $account_log) <(echo $subject_log)
