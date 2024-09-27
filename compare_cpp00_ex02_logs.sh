@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "Comparing two logs: one from running the account and one from the subject."
 
+make
+
 account_log=$(./account | cut -d' ' -f2-)
 subject_log=$(cat 19920104_091532.log | cut -d' ' -f2-)
 
